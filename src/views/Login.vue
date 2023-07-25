@@ -1,7 +1,7 @@
 <template>
   <VContainer>
     <VTextField v-model="email"/>
-    <VTextField v-model="password"/>
+    <VTextField type="password" v-model="password"/>
     <VBtn @click="login">Login</VBtn>
   </VContainer>
 </template>

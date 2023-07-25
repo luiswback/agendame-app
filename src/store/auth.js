@@ -19,6 +19,14 @@ export const userAuth = defineStore('auth', {
       return axios.post('api/logout').then(() => {
         meStore.user = null;
       });
+    },
+    register(firstName, lastName = '', email, password) {
+      return axios.post('api/register', {
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password
+      })
     }
   },
   getters: {

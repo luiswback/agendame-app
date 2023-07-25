@@ -5,13 +5,25 @@ import {userAuth} from "@/store/auth";
 const routes = [
   {
     path: '/login',
-    component: () => import('@/layouts/Login.vue'),
+    component: () => import('@/layouts/Auth.vue'),
     beforeEnter: redirectIfAuthenticated,
     children: [
       {
         path: '',
         name: 'login',
         component: () => import('@/views/Login'),
+      },
+    ],
+  },
+  {
+    path: '/register',
+    component: () => import('@/layouts/Auth.vue'),
+    beforeEnter: redirectIfAuthenticated,
+    children: [
+      {
+        path: '',
+        name: 'register',
+        component: () => import('@/views/Register'),
       },
     ],
   },
