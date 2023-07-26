@@ -27,6 +27,11 @@ export const userAuth = defineStore('auth', {
         email: email,
         password: password
       })
+    },
+    verifyEmail(token) {
+      return axios.post('api/verify-email', {
+        token: token
+      })
     }
   },
   getters: {

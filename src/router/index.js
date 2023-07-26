@@ -29,6 +29,19 @@ const routes = [
   },
 
   {
+    path: '/verify-email',
+    component: () => import('@/layouts/Auth.vue'),
+    beforeEnter: redirectIfAuthenticated,
+    children: [
+      {
+        path: '',
+        name: 'verifyEmail',
+        component: () => import('@/views/VerifyEmail'),
+      },
+    ],
+  },
+
+  {
     path: '/',
     component: () => import('@/layouts/Dashboard.vue'),
     beforeEnter: auth,
